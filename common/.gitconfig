@@ -1,0 +1,10 @@
+[user]
+	name = veizz
+	email = veizzsmile@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	log = auto
+[core]
+	editor = vim
