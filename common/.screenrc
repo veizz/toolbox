@@ -1,0 +1,15 @@
+# If a screen dies, don't freeze the whole screen waiting for it.
+nonblock on
+#
+# UTF-8 is necessary.
+defutf8 on
+#
+# Change default scrollback value for new windows: scrollback 10000
+#defscrollback 10000
+# 在最下一行显示窗口列表和时钟
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %H(%l) %{..Y} %Y/%m/%d %c:%s "
+#
+# 关闭错误提示
+vbell off 
