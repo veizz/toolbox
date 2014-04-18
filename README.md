@@ -7,5 +7,6 @@ my toolbox, including config files and deploy scripts .
 
 * common: *the most commonly used config files and scripts*
 * soft: *by software name*
+* scripts: *useful scripts*
 
 
