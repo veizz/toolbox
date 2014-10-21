@@ -1,0 +1,29 @@
+#!/usr/bin/expect -f
+
+set bridge_user [lindex $argv 0]
+set bridge_host [lindex $argv 1]
+set host [lindex $argv 2]
+set user [lindex $argv 3]
+set pass [lindex $argv 4]
+
+spawn ssh $bridge_user@$bridge_host
+expect "*bash*" { send "ssh $user@$host\r" }
+expect {
+    "*sure you want to continue connecting*" {
+        sleep .1
+            exp_send "yes\r"
+            exp_continue
+    }
+    "*password*" {
+        sleep .1
+#            exp_send -- "$pass\r"
+            exp_send "$pass\r"
+    }
+    "*$*" {
+        sleep .1
+            exp_send "ls\r"
+    }
+}
+interact
+#expect eof
+exit

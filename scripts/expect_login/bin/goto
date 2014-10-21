@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+home_dir=/home/user
+bridge_username=busername
+bridge_host=bridge.host.name.com
+exp_path=$home_dir/bin
+conf_path=$home_dir/etc
+conf_file=$conf_path/goto.conf
+
+hostalais=$1
+
+ssh_sock_file=$home_dir/.ssh/master-$bridge_username@$bridge_host:22
+
+#echo $conf_file
+#exit
+if [ ! -S $ssh_sock_file ]; then
+    echo "login relay master"
+    ssh -M -N -f $bridge_username@$bridge_host
+fi
+# get hostname from config file
+read host username password <<< $(grep -v '^#' $conf_file | grep "$hostalais")
+
+$exp_path/goto.exp $bridge_username $bridge_host $host $username $password
