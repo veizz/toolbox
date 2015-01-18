@@ -1,0 +1,25 @@
+#!/bin/sh
+if [ $# -eq 0 ]; then
+    echo "usage: newblog 'blog-title'"
+    exit
+fi
+TITLE=$1
+PAGE_ID=`date|md5`
+CURDATE=`date "+%Y-%m-%d"`
+CURTIME=`date "+%H:%M:%S"`
+POST_FILE_NAME=_posts/$CURDATE-$TITLE.md
+if [ -f $POST_FILE_NAME ]; then
+    echo 'file exists'
+    exit
+fi
+echo "---
+v_pageid: $PAGE_ID
+layout: post  
+author: veizz
+title: title   
+date:  $CURDATE $CURTIME
+categories: default
+meta: meta_message
+
+---" > $POST_FILE_NAME
+vi $POST_FILE_NAME
