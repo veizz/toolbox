@@ -1,0 +1,10 @@
+{
+  // Make changes here to the xonsh profile.
+  // xonsh config defined by veizz
+  // xonsh: https://xon.sh
+  "guid": "{2db21630-63eb-4361-85c3-13bb2813d233}",
+  "name": "PowerShell based xonsh",
+  "commandline": "powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& C:\\ProgramData\\Miniconda3\\python.exe C:\\ProgramData\\Miniconda3\\cwp.py C:\\ProgramData\\Miniconda3 C:\\ProgramData\\Miniconda3\\Scripts\\xonsh.exe\"",
+  "hidden": false,
+  "icon": "%ALLUSERSPROFILE%\\Miniconda3\\Menu\\xonsh.ico"
+}
