@@ -1,0 +1,14 @@
+# XONSH WEBCONFIG START
+$PROMPT = '{env_name}{BOLD_GREEN}{user}@{hostname}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
+xontrib load coreutils
+# XONSH WEBCONFIG END
+
+def _ls(args, stdin=None):
+    print(len(args))
+    if len(args) == 0:
+        dir .
+    else:
+        tmpPath=args[0].replace('/', '\\')
+        dir @(tmpPath)
+
+aliases['ls'] = _ls
