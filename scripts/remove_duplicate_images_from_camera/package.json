@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pixelmatch": "^7.1.0",
+    "sharp": "^0.34.1"
+  }
+}
